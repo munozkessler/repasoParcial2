@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlms:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<meta charset="ISO-8859-1">
+<title>Ver contribuyentes</title>
+</head>
+<body>
+	<table class="table table-bordered">
+		<thead class="thead-dark">
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">Nit</th>
+			<th scope="col">Fecha de Ingreso</th>
+			<th scope="col">Importancia</th>
+
+		</thead>
+		<th:block th:each="contribuyente,row:${contribuyentes}">
+			<tr>
+				<th scope="row" th:text="${contribuyente.s_nombre}"/>
+				<th scope="row" th:text="${contribuyente.s_apellido}"/>
+				<th scope="row" th:text="${contribuyente.s_nit}"/>
+				<th scope="row" th:text="${contribuyente.f_fecha_ingreso}"/>
+				<th scope="row" th:text="${contribuyente.c_importancia.s_importancia}"/>
+			</tr>
+		</th:block>	
+	</table>
+	<br><button class="btn btn-secondary" onclick="window.location.href='/inicio'">Volver a ingresar un Contribuyente</button>
+</body>
+</html>
